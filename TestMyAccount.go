@@ -11,7 +11,8 @@ var (
 )
 
 func main() {
-	str :="\n收支\t账户金额\t收支金额\t\t说明"
+	str := "\n收支\t账户金额\t收支金额\t\t说明"
+	money := 10000.0
 	for {
 		fmt.Println("\n---------------------家庭收支记账软件-----------------------------")
 		fmt.Println("                       1.收支明细")
@@ -30,14 +31,19 @@ func main() {
 			money += pay
 			fmt.Printf("本次收入说明：")
 			fmt.Scan(&note)
-			str += fmt.Sprintf("\n收入\t\t%v\t\t%v\t\t%v",money,pay,note)
+			str += fmt.Sprintf("\n收入\t\t%v\t\t%v\t\t%v", money, pay, note)
 		case "3":
 			fmt.Println("本次支出金额：")
 			fmt.Scan(&pay)
-			money += pay
+			if pay > money {
+				fmt.Println("余额不足")
+				break
+			}
+			money -= pay
 			fmt.Printf("本次支出说明：")
 			fmt.Scan(&note)
-			str += fmt.Sprintf("\n支出\t\t%v\t\t%v\t\t%v",money,pay,note)
+			str += fmt.Sprintf("\n支出\t\t%v\t\t%v\t\t%v", money, pay, note)
+
 		case "4":
 			goto breakTag
 		default:
