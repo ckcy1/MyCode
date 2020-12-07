@@ -6,7 +6,7 @@ var M string
 
 func main() {
 
-	fmt.Println("请输入：44142419961208349X")
+	fmt.Println("请输入：")
 	fmt.Scan(&M)
 	fmt.Println(M)
 }
