@@ -12,6 +12,6 @@ func main() {
 		fmt.Println("                       第三级菜单")
 		fmt.Println("                       第四级菜单")
 		fmt.Println("请你输入菜单：")
-		fmt.Scan(k)
+		fmt.Scan(&k)
 	}
 }
