@@ -32,7 +32,12 @@ func main() {
 			fmt.Scan(&note)
 			str += fmt.Sprintf("\n收入\t\t%v\t\t%v\t\t%v",money,pay,note)
 		case "3":
-			fmt.Println("菜单一3")
+			fmt.Println("本次支出金额：")
+			fmt.Scan(&pay)
+			money += pay
+			fmt.Printf("本次支出说明：")
+			fmt.Scan(&note)
+			str += fmt.Sprintf("\n支出\t\t%v\t\t%v\t\t%v",money,pay,note)
 		case "4":
 			goto breakTag
 		default:
