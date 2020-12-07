@@ -2,11 +2,11 @@ package main
 
 import "fmt"
 
-var M string
+var m string
 
 func main() {
 
 	fmt.Println("请输入：")
-	fmt.Scan(&M)
-	fmt.Println(M)
+	fmt.Scan(&m)
+	fmt.Println(m)
 }
