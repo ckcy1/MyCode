@@ -45,7 +45,26 @@ func main() {
 			str += fmt.Sprintf("\n支出\t\t%v\t\t%v\t\t%v", money, pay, note)
 
 		case "4":
-			goto breakTag
+			// 	for{fmt.Printf("你确定要退出y/n?")
+			// 	fmt.Scan(&a)
+			// if a=="y" {
+			// 	 goto breakTag }
+			//  } else if a=="n"{
+
+			//      }}
+			// a := ""
+			for {
+				fmt.Printf("你确定要退出y/n?")
+				fmt.Scan(&k)
+				if k=="y" {
+					goto breakTag 
+				}else if k=="n"{
+					break
+
+				}
+
+			}
+
 		default:
 			fmt.Println("你输入无效！")
 		}

@@ -2,11 +2,19 @@ package main
 
 import "fmt"
 
-var m string
+// var m string
 
+// func main() {
+
+// 	fmt.Println("请输入：")
+// 	fmt.Scan(&m)
+// 	fmt.Println(m)
+// }
 func main() {
+	var a *int
+	a = new(int)
 
-	fmt.Println("请输入：")
-	fmt.Scan(&m)
-	fmt.Println(m)
+	fmt.Println(*a)
+	fmt.Println(a)
+
 }
