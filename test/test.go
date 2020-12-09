@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-type account struct {
+type Account struct {
 	k         string  //输入数字
 	note      string  //说明
 	pay       float64 //收支金额
@@ -12,9 +12,9 @@ type account struct {
 	breakflag bool    // 跳出循环
 }
 
-func newaccount(k string, note string, pay float64,
-	money float64, str string, flag bool, breakflag bool) *account {
-	return &account{
+func newAccount(k string, note string, pay float64,
+	money float64, str string, flag bool, breakflag bool) *Account {
+	return &Account{
 		k:         k,
 		note:      note,
 		pay:       pay,
@@ -25,7 +25,7 @@ func newaccount(k string, note string, pay float64,
 	}
 }
 
-func (a account) menu() {
+func (a Account) menu() {
 
 	for {
 		fmt.Println("\n---------------------家庭收支记账软件-----------------------------")
@@ -56,7 +56,7 @@ func (a account) menu() {
 	// 	fmt.Println("退出")
 
 }
-func (a *account) shouru() {
+func (a *Account) shouru() {
 	fmt.Println("本次收入金额：")
 	fmt.Scan(&a.pay)
 	a.money += a.pay
@@ -67,7 +67,7 @@ func (a *account) shouru() {
 	a.flag = false
 
 }
-func (a *account) zhichu() {
+func (a *Account) zhichu() {
 	fmt.Println("本次支出金额：")
 	fmt.Scan(&a.pay)
 	if a.pay > a.money {
@@ -83,7 +83,7 @@ func (a *account) zhichu() {
 	}
 
 }
-func (a *account) exit() {
+func (a *Account) exit() {
 	for {
 		fmt.Printf("你确定要退出y/n?")
 		fmt.Scan(&a.k)
@@ -96,7 +96,7 @@ func (a *account) exit() {
 
 	}
 }
-func (a *account) mingxi() {
+func (a *Account) mingxi() {
 	if a.flag {
 		fmt.Printf("当前没有收支明细...来一笔")
 	} else {
@@ -106,7 +106,7 @@ func (a *account) mingxi() {
 
 }
 func main() {
-	a := newaccount("", "", 3.0, 100.0, "\n收支\t账户金额\t收支金额\t\t说明", true, false)
+	a := newAccount("", "", 3.0, 100.0, "\n收支\t账户金额\t收支金额\t\t说明", true, false)
 	a.menu()
 
 }
