@@ -40,7 +40,7 @@ func (a account) menu() {
 		case "3":
 			a.zhichu()
 		case "4":
-a.exit()
+			a.exit()
 		default:
 			fmt.Println("你输入无效！")
 		}
