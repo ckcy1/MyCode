@@ -1,6 +1,7 @@
 /*
 引用包包 import  方法 跟 函数明要
 第一个字母要大写，同时要加// 注释
+注释 要 方法名 跟函数名 上面  加空格
 */
 
 package utils
@@ -32,8 +33,8 @@ type Account struct {
 // 	}
 // }
 
-//Menu()主菜单
-func (a Account) Menu() {
+//Menu 主菜单
+func (a *Account) Menu() {
 
 	for {
 		fmt.Println("\n---------------------家庭收支记账软件-----------------------------")
@@ -113,7 +114,7 @@ func (a *Account) mingxi() {
 	}
 }
 
-// NewAccount
+//NewAccount 是个构造函数
 func NewAccount() *Account {
 
 	return &Account{
