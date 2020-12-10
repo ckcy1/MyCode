@@ -15,7 +15,8 @@ type student struct {
 	mark int    // 分数
 }
 
-func  newstudent(id int, name string, age int, mark int) *student {
+//student  的构造函数
+func newstudent(id int, name string, age int, mark int) *student {
 	return &student{
 		id:   id,
 		name: name,
@@ -29,6 +30,11 @@ type allstudent struct {
 	allstudent []*student //系统学生集合
 }
 
+func newallstudent() *allstudent {
+	return &allstudent{
+		allstudent: make([]*student, 0, 100),
+	}
+}
 func main() {
 	// 展示学生信息管理系统
 	for {
