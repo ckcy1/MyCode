@@ -14,6 +14,17 @@ type student struct {
 	age  int    //年龄
 	mark int    // 分数
 }
+
+func  newstudent(id int, name string, age int, mark int) *student {
+	return &student{
+		id:   id,
+		name: name,
+		age:  age,
+		mark: mark,
+	}
+
+}
+
 type allstudent struct {
 	allstudent []*student //系统学生集合
 }
