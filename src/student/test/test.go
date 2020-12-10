@@ -3,13 +3,19 @@
 // 程序提供展示学生列表、添加学生、编辑学生信息、删除学生等功能
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 type student struct {
 	id   int    //学生唯一ID
 	name string //姓名
 	age  int    //年龄
 	mark int    // 分数
+}
+type allstudent struct {
+	allstudent []*student //系统学生集合
 }
 
 func main() {
@@ -24,17 +30,20 @@ func main() {
 		//输入学生信息
 		//执行输入信息
 		k := ""
+		fmt.Scanf("%s", &k)
 		switch k {
 		case "1":
-
+			//展示学生列表
 		case "2":
-
+			//添加学生信息
 		case "3":
-
+			//编辑学生信息
 		case "4":
-
+			//删除学生信息
 		case "5":
-
+			//退出学生系统
+			os.Exit(0)
+			fmt.Println("你已经退出了系统！！！")
 		default:
 
 		}
