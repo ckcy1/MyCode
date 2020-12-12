@@ -8,16 +8,16 @@ import (
 	"os"
 )
 
-type student struct {
+type Student struct {
 	id   int    //学生唯一ID
 	name string //姓名
 	age  int    //年龄
 	mark int    // 分数
 }
 
-//student  的构造函数
-func newstudent(id int, name string, age int, mark int) *student {
-	return &student{
+//Student  的构造函数
+func NewStudent(id int, name string, age int, mark int) *Student {
+	return &Student{
 		id:   id,
 		name: name,
 		age:  age,
@@ -26,56 +26,38 @@ func newstudent(id int, name string, age int, mark int) *student {
 
 }
 
-type allstudent struct {
-	allstudent []*student //系统学生集合
+type AllStudent struct {
+	AllStudent []*Student //系统学生集合
 }
 
-func newallstudent() *allstudent {
-	return &allstudent{
-		allstudent: make([]*student, 0, 100),
+func newAllStudent() *AllStudent {
+	return &AllStudent{
+		AllStudent: make([]*Student, 0, 100),
 	}
 }
 
 //添加学生信息
-func (a *allstudent) addstudent(stu *student) {
-	a.allstudent = append(a.allstudent, stu)
+func (a *AllStudent) addStudent(stu *Student) {
+	a.AllStudent = append(a.AllStudent, stu)
 
 }
 
 //编辑学生信息
-func (a *allstudent) editstudent(stu *student) {
-	for i, v := range a.allstudent {
+func (a *AllStudent) editStudent(stu *Student) {
+	for i, v := range a.AllStudent {
 		if v.id == stu.id {
-			a.allstudent[i] = stu
+			a.AllStudent[i] = stu
 			return
 		}
 	}
 	fmt.Printf("没有这人")
 }
 
-//输入学生信息
-func inputstudent() *student {
-	var (
-		id   int    //学生唯一ID
-		name string //姓名
-		age  int    //年龄
-		mark int    // 分数
-	)
-	fmt.Printf("请你输入学号：")
-	fmt.Scan(&id)
-	fmt.Printf("请你输入姓名：")
-	fmt.Scan(&name)
-	fmt.Printf("请你输入年龄：")
-	fmt.Scan(&age)
-	fmt.Printf("请你输入分数：")
-	fmt.Scan(&mark)
-	stu := newstudent(id, name, age, mark)
-	return stu
-}
+
 
 //展示学生列表
-func (a *allstudent) showstudent() {
-	for _, v := range a.allstudent {
+func (a *AllStudent) showStudent() {
+	for _, v := range a.AllStudent {
 		fmt.Println(v.name)
 		fmt.Printf("学号：%d,姓名：%s，年龄：%d，分数：%d\n",v.id, v.name, v.age, v.mark)
 
@@ -83,7 +65,7 @@ func (a *allstudent) showstudent() {
 }
 
 func main() {
-	sk := newallstudent()
+	sk := newAllStudent()
 	// 展示学生信息管理系统
 	for {
 		fmt.Println("学生信息管理系统")
@@ -98,18 +80,18 @@ func main() {
 		fmt.Scan(&k)
 		switch k {
 		case "1":
-			sk.showstudent()
+			sk.showStudent()
 			//展示学生列表
 		case "2":
-			stu := inputstudent()
-			sk.addstudent(stu)
+			stu := inputStudent()
+			sk.addStudent(stu)
 			//添加学生信息
 		case "3":
-			stu := inputstudent()
-			sk.editstudent(stu)
+			stu := inputStudent()
+			sk.editStudent(stu)
 			//编辑学生信息
 		case "4":
-			inputstudent()
+			inputStudent()
 			//删除学生信息
 		case "5":
 			//退出学生系统
