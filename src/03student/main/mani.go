@@ -4,7 +4,7 @@
 package main
 import(
 	"fmt"
-	"student/utils"
+	"03student/utils"
 	"os"
 )
 //输入学生信息
