@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"04customerManage/service"
+	"04customerManage/model"
 )
 
 type customerView struct {
@@ -31,6 +32,28 @@ func(c *customerView)list(){
 	}
 	fmt.Println("---------------客户列表完成--------------")
 }
+func(c *customerView)add(){
+	var (name string
+		gender string
+	age int
+	phone string
+	emain string
+	)
+	fmt.Println("----------------添加客户---------------")
+	fmt.Println("姓名：")
+	fmt.Scan(&name)
+	fmt.Println("性别：")
+	fmt.Scan(&gender)
+	fmt.Println("年龄：")
+	fmt.Scan(&age)
+	fmt.Println("电话：")
+	fmt.Scan(&phone)
+	fmt.Println("邮箱：")
+	fmt.Scan(&emain)
+	cus:=model.NewCustomer2(name,gender,age,phone,emain)
+	c.customerService.Add(cus)
+
+}
 
 func(c *customerView)menu(){
 	for {
@@ -44,6 +67,7 @@ func(c *customerView)menu(){
 		fmt.Scan(&c.key)
 		switch c.key {
 		case "1":
+			c.add()
 			fmt.Println("1.添加客户")
 		case "2":
 			fmt.Println("2.修改客户")

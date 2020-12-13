@@ -27,3 +27,13 @@ func NewCustomerService() *CustomerService {
 func (c *CustomerService) List() []model.Customer {
 	return c.customers
 }
+//Add 将新的客户加入到切片
+func (c *CustomerService) Add(cus model.Customer){
+	// CustomerService.num 成为计算器（***）
+	c.num++
+	cus.ID =c.num
+	// cus.ID =1
+	// cus.ID++
+	c.customers = append(c.customers,cus)
+
+}
