@@ -78,6 +78,20 @@ func (c *customerView) delete() {
 	}
 
 }
+func (c *customerView) exit() {
+	fmt.Println("确定是否退出（Y/N）:")
+	for {
+		fmt.Scan(&c.key)
+		if c.key == "Y" || c.key == "y" || c.key == "n" || c.key == "N" {
+			break
+		}
+		fmt.Println("你的输入有误，确认是否退出（Y/N）")
+
+	}
+	if c.key == "Y" || c.key == "y" {
+		c.flag = true
+	}
+}
 
 func (c *customerView) menu() {
 	for {
@@ -99,7 +113,7 @@ func (c *customerView) menu() {
 		case "4":
 			c.list()
 		case "5":
-			c.flag = true
+			c.exit()
 			fmt.Println("你已经退出了软件！")
 		default:
 			fmt.Printf("你的输入有误！！\n")
