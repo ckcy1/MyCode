@@ -1,22 +1,16 @@
 package main
 
 import (
-	"fmt"
 	"html/template"
-	"log"
 	"net/http"
-	_ "time"
 )
 
-func handler (w http.ResponseWriter,r *http.Request){
-  tem,err:= template.ParseFiles("/http)/index.html")
-  fmt.Println(err)
-  log.Fatal(tem.Execute(w,"hello"))
+func  handle(w http.ResponseWriter,r *http.Request)  {
+	tem,_:=template.ParseFiles("index.html")
+	tem.Execute(w, "hello")
 }
-func main(){
-//mux:=http.NewServeMux()
-http.HandleFunc("/",handler)
-log.Fatal(http.ListenAndServe(":8080",nil))//wo
-
+func main()  {
+	http.HandleFunc("/",handle)
+	http.ListenAndServe(":8080", nil)
 
 }
