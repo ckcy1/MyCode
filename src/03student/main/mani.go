@@ -2,11 +2,13 @@
 // 学生有id、姓名、年龄、分数等信息
 // 程序提供展示学生列表、添加学生、编辑学生信息、删除学生等功能
 package main
-import(
-	"fmt"
+
+import (
 	"03student/utils"
+	"fmt"
 	"os"
 )
+
 //输入学生信息
 func inputStudent() *utils.Student {
 	var (

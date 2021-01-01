@@ -1,16 +1,16 @@
 package main
 
 import (
-	"html/template"
+	"fmt"
+	"log"
 	"net/http"
 )
 
-func  handle(w http.ResponseWriter,r *http.Request)  {
-	tem,_:=template.ParseFiles("index.html")
-	tem.Execute(w, "hello")
+func handler(w http.ResponseWriter, r *http.Request) {
+	n, err := w.Write([]byte("hello,world!"))
+	fmt.Println(n, err)
 }
-func main()  {
-	http.HandleFunc("/",handle)
-	http.ListenAndServe(":8080", nil)
-
+func main() {
+	http.HandleFunc("/", handler)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }

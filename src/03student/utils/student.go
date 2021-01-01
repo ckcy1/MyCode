@@ -22,6 +22,7 @@ func NewStudent(id int, name string, age int, mark int) *Student {
 	}
 
 }
+
 //AllStudent 切片结构体
 type AllStudent struct {
 	AllStudent []*Student //系统学生集合

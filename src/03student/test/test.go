@@ -53,13 +53,11 @@ func (a *AllStudent) editStudent(stu *Student) {
 	fmt.Printf("没有这人")
 }
 
-
-
 //展示学生列表
 func (a *AllStudent) showStudent() {
 	for _, v := range a.AllStudent {
 		fmt.Println(v.name)
-		fmt.Printf("学号：%d,姓名：%s，年龄：%d，分数：%d\n",v.id, v.name, v.age, v.mark)
+		fmt.Printf("学号：%d,姓名：%s，年龄：%d，分数：%d\n", v.id, v.name, v.age, v.mark)
 
 	}
 }

@@ -1,7 +1,9 @@
 package model
-import(
+
+import (
 	"fmt"
 )
+
 //Customer 是客户信息结构体
 type Customer struct {
 	ID     int    // 客户ID 唯一
@@ -36,9 +38,10 @@ func NewCustomer2(name string, gender string,
 		Emain:  emain,
 	}
 }
+
 //GetInfo 显示该用户信息
-func(v Customer)GetInfo()string{
-	str:=fmt.Sprintf("%d\t%s\t%s\t%d\t%s\t%s\n",v.ID,v.Name,v.Gender,
-	v.Age,v.Phone,v.Emain)
+func (v Customer) GetInfo() string {
+	str := fmt.Sprintf("%d\t%s\t%s\t%d\t%s\t%s\n", v.ID, v.Name, v.Gender,
+		v.Age, v.Phone, v.Emain)
 	return str
 }
