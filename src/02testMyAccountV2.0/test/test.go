@@ -34,7 +34,7 @@ func (a Account) menu() {
 		fmt.Println("                       3.登记支出")
 		fmt.Println("                       4.退    出")
 		fmt.Printf("请选择（1-4）：")
-		fmt.Scan(&a.k)
+		_, _ = fmt.Scan(&a.k)
 		switch a.k {
 		case "1":
 			a.mingxi()

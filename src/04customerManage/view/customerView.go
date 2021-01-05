@@ -45,15 +45,15 @@ func (c *customerView) add() {
 	)
 	fmt.Println("----------------添加客户---------------")
 	fmt.Println("姓名：")
-	fmt.Scan(&name)
+	_, _ = fmt.Scan(&name)
 	fmt.Println("性别：")
-	fmt.Scan(&gender)
+	_, _ = fmt.Scan(&gender)
 	fmt.Println("年龄：")
-	fmt.Scan(&age)
+	_, _ = fmt.Scan(&age)
 	fmt.Println("电话：")
-	fmt.Scan(&phone)
+	_, _ = fmt.Scan(&phone)
 	fmt.Println("邮箱：")
-	fmt.Scan(&emain)
+	_, _ = fmt.Scan(&emain)
 	cus := model.NewCustomer2(name, gender, age, phone, emain)
 	if c.customerService.Add(cus) {
 		fmt.Println("----------------添加完成---------------")
@@ -65,10 +65,10 @@ func (c *customerView) delete() {
 	fmt.Println("----------------删除客户---------------")
 	fmt.Println("请选择待删除客户编号（-1退出）：")
 	id := -1
-	fmt.Scanln(&id)
+	fmt.Scan(&id)
 	fmt.Println("确认是否删除（Y/N）:")
 	choice := ""
-	fmt.Scanln(&choice)
+	fmt.Scan(&choice)
 	if choice == "y" || choice == "Y" {
 		if c.customerService.Delete(id) {
 			fmt.Println("----------------删除成功---------------")

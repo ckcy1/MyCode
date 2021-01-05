@@ -7,10 +7,10 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	n, err := w.Write([]byte("hello,world!"))
-	fmt.Println(n, err)
+   fmt.Println(r.PostForm)
+	_, _ = fmt.Fprintln(w, r.Form)
 }
 func main() {
-	http.HandleFunc("/", handler)
+	http.HandleFunc("/process", handler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

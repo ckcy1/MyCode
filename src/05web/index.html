@@ -2,11 +2,14 @@
 <head>
 <meta charset="UTF-8">
 <title>书城首页</title>
-
-
 </head>
 <body>
-	
+	<form action="http//:localhost:8080/process" method="post"
+		  enctype="application/x-www-form-urlencoded">
+<input type="test" name="first_name"/>
+<input type="test" name="last_name"/>
+<input type="submit" />
+	</form>
 	{{.}}
 </body>
 </html>
